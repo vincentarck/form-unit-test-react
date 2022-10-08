@@ -1,6 +1,19 @@
-import React from "react";
+import React, { useRef } from "react";
 
 export default function Form() {
+  const emailRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+
+  const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const email = emailRef.current?.value
+    const password = passwordRef.current?.value
+    if(email && password){
+      alert(`Email anda: ${email}\nPassword anda: ${password}`)
+    }else if(email || password){
+      email ? alert("Harap isi Password anda") : alert("Harap isi Email anda")
+    }
+  }
   return (
     <main className="flex-1 flex flex-col items-center justify-center bg-slate-100 py-24 lg:py-0">
       <div className="text-left w-4/5 xl:w-[70%]">
@@ -8,8 +21,9 @@ export default function Form() {
         <h2 className="text-gray-500 font-bold text-2xl">
           Sign in to continue
         </h2>
-        <form className="shadow-lg p-8 bg-white mt-10 ">
+        <form className="shadow-lg p-8 bg-white mt-10 " onSubmit={(e:React.FormEvent<HTMLFormElement>) => handleSubmit(e)}>
           <input
+            ref={emailRef}
             type="email"
             className="
             block
@@ -32,7 +46,8 @@ export default function Form() {
           />
           <div className="mt-8 space-y-4 ">
             <input
-              type="text"
+              ref={passwordRef}
+              type="password"
               className="
             block
             w-full
@@ -59,9 +74,13 @@ export default function Form() {
           <div className="flex justify-between flex-col mt-8 lg:flex-row items-start lg:items-center space-y-8">
             <div className="flex gap-2 flex-row">
               <p className="text-gray-500 font-semibold">New User?</p>
-              <p className="text-sky-700 font-semibold cursor-pointer">Create account</p>
+              <p className="text-sky-700 font-semibold cursor-pointer">
+                Create account
+              </p>
             </div>
-            <button className="px-5 py-3 text-white font-semibold bg-sky-700 rounded-lg text-sm lg:text-base">Sign In</button>
+            <button className="px-5 py-3 text-white font-semibold bg-sky-700 rounded-lg text-sm lg:text-base">
+              Sign In
+            </button>
           </div>
         </form>
       </div>
