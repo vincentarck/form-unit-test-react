@@ -12,6 +12,7 @@ export default function IntroForm() {
                 View Report
                 <img src="https://img.icons8.com/external-anggara-glyph-anggara-putra/50/FFFFFF/external-share-user-interface-anggara-glyph-anggara-putra-4.png" 
                 className='w-5 h-5 inline-flex ml-3'
+                alt='report-logo'
                 />
                 </p>
             </button>
