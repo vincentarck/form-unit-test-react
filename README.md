@@ -1,46 +1,41 @@
-# Getting Started with Create React App
+# Login Page with React
+This repository uses [conventional commits](https://pages.github.com/) as directives for commits.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Built with commonly used `clean architecture`
 
-In the project directory, you can run:
 
-### `npm start`
+### `Building`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Tech Stacks:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- ReactJS 
+- Testing Library 
+- TailwindCSS
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `Serving`
 
-### `npm run build`
+[Live Demo](https://form-ui-zot.netlify.app) 
+- Deploy with netlify
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `Testing`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Builds the testing inside the `__test__` folder
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Performing DOM testing on `Form` components with the scope:
+- Email input should be rendered
+- Email input must be empty when the DOM is first released to the browser
+- Password input should be rendered
+- Password input must be empty when the DOM is first released to the browser
+- Button sign in should be rendered
+- Email input must be changed when the user is typing in the input email field
+- Password input must be changed when the user is typing in the input pasword field
+- Button should not be disabled when inputs exist
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Performing DOM testing on `App` components with the scope:
+- Login component must be rendered
+- Intro Login Component must be rendered
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+See the section about [testing library](https://testing-library.com/) for more information.
