@@ -6,8 +6,8 @@ export default function Form() {
 
   const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const email = emailRef.current?.value
-    const password = passwordRef.current?.value
+    const email:string | undefined = emailRef.current?.value
+    const password:string | undefined = passwordRef.current?.value
     if(email && password){
       alert(`Email anda: ${email}\nPassword anda: ${password}`)
     }else if(email || password){
@@ -15,7 +15,7 @@ export default function Form() {
     }
   }
   return (
-    <main className="flex-1 flex flex-col items-center justify-center bg-slate-100 py-24 lg:py-0">
+    <main className="flex-1 flex flex-col items-center justify-center bg-slate-100 py-24 lg:py-0" data-testid="form-element">
       <div className="text-left w-4/5 xl:w-[70%]">
         <h1 className="text-sky-700 font-bold text-3xl">Welcome Back</h1>
         <h2 className="text-gray-500 font-bold text-2xl">
@@ -24,6 +24,7 @@ export default function Form() {
         <form className="shadow-lg p-8 bg-white mt-10 " onSubmit={(e:React.FormEvent<HTMLFormElement>) => handleSubmit(e)}>
           <input
             ref={emailRef}
+            aria-label="Email"
             type="email"
             className="
             block
