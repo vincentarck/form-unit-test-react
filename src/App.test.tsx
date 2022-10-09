@@ -4,12 +4,12 @@ import App from './App';
 
 test('render login component in the document', () => {
   render(<App />);
-  const inputNode = screen.getByTestId('form-element');
-  expect(inputNode).toBeInTheDocument();
+  const formNode = screen.getByTestId('form-element');
+  expect(formNode).toBeInTheDocument();
 });
 
 test('render intro login component in the document', () => {
   render(<App />);
-  const inputNode = screen.getByTestId('intro-form');
-  expect(inputNode).toBeInTheDocument();
+  const introFormNode = screen.getByTestId('intro-form');
+  expect(introFormNode).toBeInTheDocument();
 })
