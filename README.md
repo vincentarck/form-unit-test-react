@@ -38,4 +38,4 @@ Performing DOM testing on `App` components with the scope:
 - Login component must be rendered
 - Intro Login Component must be rendered
 
-See the section about [Testing library](https://testing-library.com/) for more information.
+See the section about [testing library](https://testing-library.com/) for more information.
